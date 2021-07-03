@@ -153,6 +153,7 @@ let g:session_command_aliases = 1
 syntax on
 set ruler
 set number
+autocmd ColorScheme * highlight LineNr ctermfg=241
 
 let no_buffers_menu=1
 colorscheme pencil
@@ -257,10 +258,10 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " grep.vim
-nnoremap <silent> <leader>f :Rgrep<CR>
-let Grep_Default_Options = '-IR'
-let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git node_modules'
+" nnoremap <silent> <leader>f :Rgrep<CR>
+" let Grep_Default_Options = '-IR'
+" let Grep_Skip_Files = '*.log *.db'
+" let Grep_Skip_Dirs = '.git node_modules'
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
@@ -371,7 +372,8 @@ endif
 
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
+nnoremap <silent> <leader>f :FZF -m<CR>
+nnoremap <silent> <leader>r :Rg<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
 

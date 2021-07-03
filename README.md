@@ -3,7 +3,7 @@
 
 ## Updating to the latest version
 ```shell
-:VimBootstrapUpdate (thanks to @sherzberg)
+:VimBootstrapUpdate
 :PlugInstall
 ```
 

@@ -12,8 +12,7 @@ endif
 
 let g:vim_bootstrap_langs = "javascript,typescript"
 let g:vim_bootstrap_editor = "vim"				" nvim or vim
-" let g:vim_bootstrap_theme = "pencil"
-let g:vim_bootstrap_theme = "molokai"
+let g:vim_bootstrap_theme = "pencil"
 let g:vim_bootstrap_frams = "svelte"
 
 if !filereadable(vimplug_exists)

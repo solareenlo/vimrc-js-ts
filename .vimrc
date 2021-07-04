@@ -50,6 +50,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'Mizux/vim-colorschemes'
+Plug 'preservim/vim-colors-pencil'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -231,6 +232,12 @@ let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
 "*****************************************************************************
+"" pencil
+"*****************************************************************************
+set background=dark
+" set background=light
+
+"*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
 "" no one is really happy until you have this shortcuts
@@ -356,7 +363,8 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
-let $FZF_DEFAULT_OPTS = '--preview "bat --style=numbers --color=always --line-range :500 {}"'
+" let $FZF_DEFAULT_OPTS = '--preview "bat --style=numbers --color=always --line-range :500 {}"'
+let $FZF_DEFAULT_OPTS = '--preview "bat --color=always --style=header,grid --line-range :100 {}"'
 
 " The Silver Searcher
 if executable('ag')

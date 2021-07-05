@@ -52,6 +52,7 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'Mizux/vim-colorschemes'
 Plug 'preservim/vim-colors-pencil'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'bronson/vim-trailing-whitespace'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -521,4 +522,19 @@ else
   let g:airline_symbols.branch = ''
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
+endif
+
+"-------------------------------------------------------------------------------
+" Show zenkaku spaces
+"-------------------------------------------------------------------------------
+function! ZenkakuSpace()
+        highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+    endfunction
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme       * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+    augroup END
+    call ZenkakuSpace()
 endif

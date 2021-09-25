@@ -524,6 +524,7 @@ else
   let g:airline_symbols.linenr = ''
 endif
 
+
 "-------------------------------------------------------------------------------
 " Show zenkaku spaces
 "-------------------------------------------------------------------------------
@@ -538,3 +539,12 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
+
+
+"----------------------------------------------------------
+" Window
+"----------------------------------------------------------
+noremap <leader>h <C-w>h
+noremap <leader>l <C-w>l
+noremap <leader>j <C-w>j
+noremap <leader>k <C-w>k
